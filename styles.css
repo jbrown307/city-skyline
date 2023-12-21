@@ -11,7 +11,6 @@
 }
 
 * {
-  border: 1px solid black;
   box-sizing: border-box;
 }
 
@@ -19,6 +18,41 @@ body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
+}
+
+/* circle closest-corner at 15% 15%,. This will move the start of the gradient to 15% from the top and 
+left. It will make it end at the closest-corner and it will maintain a circle shape. These are some 
+keywords built into gradients to describe how it behave */
+.sky {
+  background: radial-gradient(
+    circle closest-corner at 15% 15%,
+    #ffcf33 0%,
+    #ffcf33 20%,
+    #ffff66 21%,
+    #bbeeff 100%
+  );
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --building-color1: #000;
+    --building-color2: #000;
+    --building-color3: #000;
+    --building-color4: #000;
+    --window-color1: #777;
+    --window-color2: #777;
+    --window-color3: #777;
+    --window-color4: #777;
+  }
+  .sky {
+    background: radial-gradient(
+      closest-corner circle at 15% 15%,
+      #ccc,
+      #ccc 20%,
+      #445 21%,
+      #223 100%
+    );
+  }
 }
 
 /* You will be using almost all percent based units and some flexbox for this project, so everything will be completely responsive. */
